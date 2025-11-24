@@ -1,6 +1,7 @@
 import base64
 import os
 import sys
+import time
 from pprint import pprint
 from zfn_api import Client
 
@@ -85,11 +86,13 @@ def main():
                 f.write(pdf_result["data"])
             print("课表已成功导出为 课表.pdf")
         else:
+            time.sleep(60)  # 等待一段时间以防反爬
             print(f"导出课表失败：{pdf_result['msg']}")
 
     except Exception as e:
         print(f"程序运行出错：{str(e)}", file=sys.stderr)
         return
+
 
 if __name__ == "__main__":
     main()

@@ -13,19 +13,21 @@ from pyquery import PyQuery as pq
 from requests import exceptions
 
 RASPIANIE = [
-    ["8:00", "8:40"],
-    ["8:45", "9:25"],
-    ["9:30", "10:10"],
-    ["10:30", "11:10"],
-    ["11:15", "11:55"],
-    ["14:30", "15:10"],
-    ["15:15", "15:55"],
-    ["16:05", "16:45"],
-    ["16:50", "17:30"],
-    ["18:40", "19:20"],
-    ["19:25", "20:05"],
-    ["20:10", "20:50"],
-    ["20:55", "21:35"],
+    ["8:00", "8:45"],
+    ["8:55", "9:40"],
+    ["10:05", "10:50"],
+    ["11:00", "11:45"],
+    ["14:00", "14:45"],
+    # 444早上前
+    ["14:55", "15:40"],
+    ["16:05", "16:50"],
+    ["17:00", "17:45"],
+    ["18:45", "19:30"],
+    ["19:40", "20:25"],
+    ["20:35", "21:20"],
+    #
+    # ["20:10", "20:50"],
+    # ["20:55", "21:35"],jaja，没有
 ]
 
 
@@ -1629,7 +1631,7 @@ if __name__ == "__main__":
     import sys
     import os
 
-    base_url = "https://xxxx.xxx.edu.cn"  # 教务系统URL
+    base_url = "http://jwglxt.xzit.edu.cn/jwglxt/xtgl"  # 教务系统URL
     sid = "123456"  # 学号
     password = "abc654321"  # 密码
     lgn_cookies = (
@@ -1698,7 +1700,7 @@ if __name__ == "__main__":
     # result = lgn.get_gpa()
 
     """ 获取课程表 """
-    # result = lgn.get_schedule(test_year, test_term)
+    result = lgn.get_schedule(test_year, test_term)
 
     """ 获取成绩 """
     # result = lgn.get_grade(test_year, test_term)
