@@ -4,7 +4,7 @@ import sys
 import time
 from pprint import pprint
 from zfn_api import Client
-
+## 这是那个文档基础的运行仅供。。。
 def main():
     # 配置参数 - 建议将敏感信息通过环境变量或配置文件获取
     base_url = os.getenv("JWGLXT_BASE_URL", "http://jwglxt.xzit.edu.cn/jwglxt/xtgl")
@@ -96,3 +96,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
