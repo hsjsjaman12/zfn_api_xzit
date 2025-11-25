@@ -590,9 +590,11 @@ class JWGLApp(tk.Tk):
 
                 # 播放对应音效
                 if not failed_courses:
+                    self.play_sound(PASS_SOUND)  # 播放及格音效                    
                     messagebox.showinfo("恭喜", f"{year}-{year+1}学年第{term}学期所有课程成绩均及格！")
-                    self.play_sound(PASS_SOUND)  # 播放及格音效
+
                 else:
+                    self.play_sound(FAIL_SOUND)  # 播放不及格音效                    
                     result_text = f"以下是{year}-{year+1}学年第{term}学期成绩低于60分的课程（需要重修）：\n\n"
                     total_credit = 0
                     for i, course in enumerate(failed_courses, 1):
@@ -613,7 +615,7 @@ class JWGLApp(tk.Tk):
                     text_widget.config(yscrollcommand=scrollbar.set)
                     text_widget.pack(side="left", fill="both", expand=True, padx=10, pady=10)
                     scrollbar.pack(side="right", fill="y")
-                    self.play_sound(FAIL_SOUND)  # 播放不及格音效
+
             else:
                 messagebox.showerror("失败", f"查询成绩失败：{result.get('msg', '未知错误')}")
         except KeyError as e:
